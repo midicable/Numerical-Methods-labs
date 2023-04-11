@@ -38,11 +38,11 @@ def left_rectangles_formula(a, h, N):
     return Q
 
 
-def middle_rectangles_formula(a, h, N):
+def trapezoid_formula(a, h, N):
     Q = 0
     for k in range(N):
-        Q += f(a + (k + 0.5) * h)
-    Q *= h
+        Q += f(a + k * h) + f(a + (k + 1) * h)
+    Q *= 0.5 * h
     return round(Q, 11)
 
 def simpsons_formula(a, h, N):
